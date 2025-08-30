@@ -6,4 +6,4 @@ function MainContent() {
   );
 }
 
-export default Main;
+export default MainContent;
