@@ -5,7 +5,6 @@ function Footer() {
         display: "flex",
         height: "30vh",
         backgroundColor: "navy",
-        // alignItems: "center",
         justifyContent: "flex-end",
         flexDirection: "column",
       }}
