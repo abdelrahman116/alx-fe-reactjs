@@ -5,28 +5,32 @@ import WelcomeMessage from "./components/WelcomeMessage";
 import Header from "./components/Header";
 import MainContent from "./components/MainContent";
 import Footer from "./components/Footer";
+import React, { useState } from "react";
+
 import UserProfile from "./components/UserProfile";
-import { UserContext } from "./components/UserContext";
+// import { UserContext } from "./components/UserContext";
 import "./App.css";
 import UserDetails from "./components/UserDetails";
+import { UserContext } from "./components/UserContext";
 
 function App() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+
   return (
-    <>
+    <UserContext.Provider value={(name, setName, email, setEmail)}>
       <WelcomeMessage />
       <Header />
 
       <MainContent />
-      <UserContext.Provider>
-        <UserProfile
-          name="Abdelrahman"
-          age="22"
-          bio="Loves Islam and Prograg ❤️"
-        />
-      </UserContext.Provider>
+      <UserProfile
+        name="Abdelrahman"
+        age="22"
+        bio="Loves Islam and Prograg ❤️"
+      />
 
       <Footer />
-    </>
+    </UserContext.Provider>
   );
 }
 
