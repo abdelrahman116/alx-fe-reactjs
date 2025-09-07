@@ -11,6 +11,7 @@ export default function Navbar() {
           justifyContent: "center",
           listStyle: "none",
           marginTop: "-20rem",
+          backgroundColor: "honeydew",
         }}
       >
         <li>
