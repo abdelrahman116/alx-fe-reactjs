@@ -4,7 +4,15 @@ export default function Navbar() {
   return (
     // ✅ added return
     <div className="navbar">
-      <ul>
+      <ul
+        style={{
+          display: "flex",
+          gap: "5rem",
+          justifyContent: "center",
+          listStyle: "none",
+          marginTop: "-20rem",
+        }}
+      >
         <li>
           <Link to="/">Home</Link>
         </li>
