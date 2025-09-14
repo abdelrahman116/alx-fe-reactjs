@@ -9,4 +9,6 @@ export const useRecipeStore = create((set) => ({
     set((state) => ({
       recipes: state.recipes.filter((recipe) => recipe.id !== id),
     })),
+  updateRecipe: (recipe) =>
+    set((state) => ({ recipes: (state.recipes = recipe) })),
 }));
