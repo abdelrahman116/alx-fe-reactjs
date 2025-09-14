@@ -5,13 +5,9 @@ import { useRecipeStore } from "../Components/recipeStore";
 
 export default function RecipeDetails() {
   const { id } = useParams();
-  const recipes = useRecipeStore((state) => state.recipes);
-
-  const recipe = recipes.find((r) => r.id === Number(id));
-
-  if (!recipe) {
-    return <p>Recipe not found.</p>;
-  }
+  const recipe = useRecipeStore((state) =>
+    state.recipes.find((recipe) => recipe.id === Number(id))
+  );
 
   return (
     <div>
