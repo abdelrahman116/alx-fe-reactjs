@@ -1,6 +1,6 @@
 import "./App.css";
-import AddRecipeForm from "./Components/AddRecipeForm";
-import RecipeList from "./Components/RecipeList";
+import AddRecipeForm from "./AddRecipeForm";
+import RecipeList from "./RecipeList";
 function App() {
   return (
     <div>
