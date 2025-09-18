@@ -2,7 +2,7 @@ import { useRecipeStore } from "./recipeStore";
 import { useState } from "react";
 
 export default function EditRecipeForm() {
-  const addRecipe = useRecipeStore((state) => state.updateRecipe);
+  const addRecipe = useRecipeStore((state) => state.editRecipe);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
