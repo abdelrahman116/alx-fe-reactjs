@@ -1,23 +1,10 @@
-import { create } from "zustand";
-import { fetchGitHubUser } from "./github";
+import axios from "axios";
 
-const useGithubStore = create((set) => ({
-  user: null,
-  loading: false,
-  error: null,
-
-  getUser: async (username) => {
-    set({ loading: true, error: null });
-    try {
-      const data = await fetchGitHubUser(username);
-      set({ user: data, loading: false });
-    } catch (err) {
-      set({
-        error: (err.message = "Looks like we cant find the user"),
-        loading: false,
-      });
-    }
-  },
-}));
-
-export default useGithubStore;
+export async function fetchUserData(username) {
+  const response = await axios.get(`https://api.github.com/users/${username}`, {
+    headers: {
+      Authorization: `token ${import.meta.env.VITE_GITHUB_KEY}`,
+    },
+  });
+  return response.data;
+}
