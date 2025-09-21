@@ -1,5 +1,5 @@
 import { useState } from "react";
-import useGithubStore from "../services/githubStore";
+import useGithubStore from "../store/githubStore";
 
 export default function Search() {
   const [input, setInput] = useState("");
