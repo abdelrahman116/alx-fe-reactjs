@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { fetchGitHubUser } from "../services/github";
+import { fetchGitHubUser } from "./github";
 
 const useGithubStore = create((set) => ({
   user: null,
