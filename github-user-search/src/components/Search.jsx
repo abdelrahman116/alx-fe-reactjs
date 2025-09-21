@@ -5,7 +5,8 @@ export default function Search() {
   const [input, setInput] = useState("");
   const { user, loading, error, getUser } = useGithubStore();
 
-  const handleSearch = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault(); // ✅ prevents page reload
     if (input.trim()) {
       getUser(input);
     }
@@ -14,13 +15,17 @@ export default function Search() {
   return (
     <div>
       <h2>GitHub User Search</h2>
-      <input
-        type="text"
-        placeholder="Enter GitHub username"
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-      />
-      <button onClick={handleSearch}>Search</button>
+
+      {/* ✅ Use a form with onSubmit */}
+      <form onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="Enter GitHub username"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+        />
+        <button type="submit">Search</button>
+      </form>
 
       {loading && <p>Loading...</p>}
       {error && <p style={{ color: "red" }}>{error}</p>}
