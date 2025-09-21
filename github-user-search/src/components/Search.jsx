@@ -1,14 +1,27 @@
 import { useState } from "react";
-import useGithubStore from "../store/githubStore";
+import { fetchUserData } from "../services/githubService"; // ✅ import here
 
 export default function Search() {
   const [input, setInput] = useState("");
-  const { user, loading, error, getUser } = useGithubStore();
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
-  const handleSubmit = (e) => {
-    e.preventDefault(); // ✅ prevents page reload
-    if (input.trim()) {
-      getUser(input);
+  const handleSubmit = async (e) => {
+    e.preventDefault(); // ✅ stop reload
+    if (!input.trim()) return;
+
+    setLoading(true);
+    setError(null);
+    setUser(null);
+
+    try {
+      const data = await fetchUserData(input); // ✅ direct call
+      setUser(data);
+    } catch (err) {
+      setError("Failed to fetch user");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -16,7 +29,6 @@ export default function Search() {
     <div>
       <h2>GitHub User Search</h2>
 
-      {/* ✅ Use a form with onSubmit */}
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -28,9 +40,7 @@ export default function Search() {
       </form>
 
       {loading && <p>Loading...</p>}
-      {error && (
-        <p style={{ color: "red" }}>Looks like we cant find the user</p>
-      )}
+      {error && <p style={{ color: "red" }}>{error}</p>}
 
       {user && (
         <div style={{ marginTop: "1rem" }}>
