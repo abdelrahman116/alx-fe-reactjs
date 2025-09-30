@@ -3,62 +3,208 @@
     "id": 1,
     "title": "Spaghetti Carbonara",
     "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
-    "image": "https://www.allrecipes.com/thmb/Vg2cRidr2zcYhWGvPD8M18xM_WY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/11973-spaghetti-carbonara-ii-DDMFS-4x3-6edea51e421e4457ac0c3269f3be5157.jpg"
+    "image": "https://www.allrecipes.com/thmb/Vg2cRidr2zcYhWGvPD8M18xM_WY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/11973-spaghetti-carbonara-ii-DDMFS-4x3-6edea51e421e4457ac0c3269f3be5157.jpg",
+    "ingredients": [
+      "200g spaghetti",
+      "100g pancetta or bacon",
+      "2 eggs",
+      "50g Parmesan cheese, grated",
+      "1 garlic clove",
+      "Salt & black pepper"
+    ],
+    "instructions": [
+      "Cook spaghetti until al dente.",
+      "Fry pancetta with garlic until crispy.",
+      "Whisk eggs and Parmesan together.",
+      "Drain pasta, mix with pancetta and garlic.",
+      "Remove from heat and stir in egg mixture quickly.",
+      "Serve with extra Parmesan and black pepper."
+    ]
   },
   {
     "id": 2,
     "title": "Chicken Tikka Masala",
     "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
-    "image": "https://dantoombs.com/wp-content/uploads/2025/06/Chicken-tikka-masala-720x720.jpg"
+    "image": "https://dantoombs.com/wp-content/uploads/2025/06/Chicken-tikka-masala-720x720.jpg",
+    "ingredients": [
+      "500g chicken breast, cubed",
+      "200g plain yogurt",
+      "2 tbsp tikka masala paste",
+      "1 onion, chopped",
+      "400g canned tomatoes",
+      "150ml cream",
+      "2 tbsp butter"
+    ],
+    "instructions": [
+      "Marinate chicken in yogurt and tikka masala paste for 1 hour.",
+      "Grill or pan-fry chicken until cooked.",
+      "Fry onions in butter until golden.",
+      "Add tomatoes and simmer 10 minutes.",
+      "Stir in cream and cooked chicken.",
+      "Simmer 5 more minutes and serve with rice."
+    ]
   },
   {
     "id": 3,
     "title": "Beef Stroganoff",
     "summary": "Tender beef strips cooked in a creamy mushroom sauce, served over egg noodles.",
-    "image": "https://natashaskitchen.com/wp-content/uploads/2019/04/Beef-Stroganoff-6.jpg"
+    "image": "https://natashaskitchen.com/wp-content/uploads/2019/04/Beef-Stroganoff-6.jpg",
+    "ingredients": [
+      "400g beef sirloin, sliced",
+      "200g mushrooms, sliced",
+      "1 onion, chopped",
+      "200ml sour cream",
+      "2 tbsp flour",
+      "200g egg noodles"
+    ],
+    "instructions": [
+      "Cook noodles and set aside.",
+      "Sear beef strips and remove from pan.",
+      "Fry onion and mushrooms until golden.",
+      "Stir in flour, then add sour cream.",
+      "Return beef to the pan and simmer 5 minutes.",
+      "Serve over noodles."
+    ]
   },
   {
     "id": 4,
     "title": "Margherita Pizza",
     "summary": "A simple Neapolitan pizza topped with fresh tomatoes, mozzarella cheese, and basil.",
-    "image": "https://safrescobaldistatic.blob.core.windows.net/media/2022/11/PIZZA-MARGHERITA.jpg"
+    "image": "https://safrescobaldistatic.blob.core.windows.net/media/2022/11/PIZZA-MARGHERITA.jpg",
+    "ingredients": [
+      "1 pizza dough",
+      "200g fresh mozzarella",
+      "2 fresh tomatoes",
+      "2 tbsp olive oil",
+      "Fresh basil leaves"
+    ],
+    "instructions": [
+      "Preheat oven to 220°C (430°F).",
+      "Spread olive oil and tomato slices on dough.",
+      "Add mozzarella slices evenly.",
+      "Bake for 10-12 minutes until crust is golden.",
+      "Top with fresh basil and serve hot."
+    ]
   },
   {
     "id": 5,
     "title": "Sushi Platter",
     "summary": "An assortment of fresh nigiri, sashimi, and sushi rolls served with soy sauce and wasabi.",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCozi18sKScSXfps0FJASV2iGiXwAd7lYX9Q&s"
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCozi18sKScSXfps0FJASV2iGiXwAd7lYX9Q&s",
+    "ingredients": [
+      "300g sushi rice",
+      "100g raw salmon",
+      "100g raw tuna",
+      "Nori sheets",
+      "Soy sauce",
+      "Wasabi & pickled ginger"
+    ],
+    "instructions": [
+      "Cook sushi rice and season with vinegar.",
+      "Slice fish into thin strips.",
+      "For nigiri: shape rice, place fish on top.",
+      "For rolls: place rice on nori, add fillings, roll tightly.",
+      "Slice rolls and serve with soy sauce, wasabi, and ginger."
+    ]
   },
-
   {
     "id": 6,
     "title": "Greek Salad",
     "summary": "A refreshing salad with cucumbers, tomatoes, feta cheese, olives, and olive oil.",
-    "image": "https://hips.hearstapps.com/hmg-prod/images/greek-salad-index-642f292397bbf.jpg?crop=0.888888888888889xw:1xh;center,top&resize=1200:*"
+    "image": "https://hips.hearstapps.com/hmg-prod/images/greek-salad-index-642f292397bbf.jpg?crop=0.888888888888889xw:1xh;center,top&resize=1200:*",
+    "ingredients": [
+      "2 cucumbers, diced",
+      "3 tomatoes, chopped",
+      "100g feta cheese",
+      "1 red onion, sliced",
+      "50g black olives",
+      "2 tbsp olive oil"
+    ],
+    "instructions": [
+      "Chop cucumbers, tomatoes, and onion.",
+      "Mix in a bowl with olives.",
+      "Top with crumbled feta cheese.",
+      "Drizzle with olive oil and serve chilled."
+    ]
   },
-
   {
     "id": 7,
     "title": "Falafel Wrap",
     "summary": "Crispy chickpea falafels wrapped in pita with tahini sauce, lettuce, and tomato.",
-    "image": "https://beingnutritious.com/wp-content/uploads/2022/07/Baked-Falafel-Wrap-Square.jpg"
+    "image": "https://beingnutritious.com/wp-content/uploads/2022/07/Baked-Falafel-Wrap-Square.jpg",
+    "ingredients": [
+      "8 falafel balls",
+      "2 pita breads",
+      "Lettuce leaves",
+      "2 tomatoes, sliced",
+      "Tahini sauce"
+    ],
+    "instructions": [
+      "Warm pita bread.",
+      "Fill with lettuce, tomato, and falafels.",
+      "Drizzle with tahini sauce.",
+      "Wrap tightly and serve."
+    ]
   },
   {
     "id": 8,
     "title": "Ramen Bowl",
     "summary": "Japanese noodle soup with miso broth, pork slices, egg, and vegetables.",
-    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7vD7aviWo5usFkwunWmYGOHs56s2PShCeNg&s"
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7vD7aviWo5usFkwunWmYGOHs56s2PShCeNg&s",
+    "ingredients": [
+      "200g ramen noodles",
+      "500ml miso broth",
+      "2 slices pork belly",
+      "1 boiled egg",
+      "Spring onions & vegetables"
+    ],
+    "instructions": [
+      "Cook ramen noodles and set aside.",
+      "Heat miso broth in a pot.",
+      "Add noodles, pork slices, and vegetables.",
+      "Top with half a boiled egg and spring onions.",
+      "Serve hot."
+    ]
   },
   {
     "id": 9,
     "title": "Tacos al Pastor",
     "summary": "Mexican street tacos with marinated pork, pineapple, and cilantro on corn tortillas.",
-    "image": "https://www.seriouseats.com/thmb/4kbwN13BlZnZ3EywrtG2AzCKuYs=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/20210712-tacos-al-pastor-melissa-hom-seriouseats-37-f72cdd02c9574bceb1eef1c8a23b76ed.jpg"
+    "image": "https://www.seriouseats.com/thmb/4kbwN13BlZnZ3EywrtG2AzCKuYs=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/20210712-tacos-al-pastor-melissa-hom-seriouseats-37-f72cdd02c9574bceb1eef1c8a23b76ed.jpg",
+    "ingredients": [
+      "500g pork shoulder, thinly sliced",
+      "2 tbsp chili paste",
+      "1 pineapple, diced",
+      "8 corn tortillas",
+      "Fresh cilantro"
+    ],
+    "instructions": [
+      "Marinate pork in chili paste overnight.",
+      "Grill pork slices until charred.",
+      "Warm tortillas and fill with pork.",
+      "Top with pineapple and cilantro.",
+      "Serve with lime wedges."
+    ]
   },
   {
     "id": 10,
     "title": "Chocolate Lava Cake",
     "summary": "A rich chocolate cake with a warm, gooey molten center, served with ice cream.",
-    "image": "https://images.getrecipekit.com/20250325120225-how-20to-20make-20chocolate-20molten-20lava-20cake-20in-20the-20microwave.png?width=650&quality=90&"
+    "image": "https://images.getrecipekit.com/20250325120225-how-20to-20make-20chocolate-20molten-20lava-20cake-20in-20the-20microwave.png?width=650&quality=90&",
+    "ingredients": [
+      "100g dark chocolate",
+      "100g butter",
+      "2 eggs",
+      "50g sugar",
+      "40g flour",
+      "Vanilla ice cream (for serving)"
+    ],
+    "instructions": [
+      "Melt chocolate and butter together.",
+      "Whisk eggs and sugar until fluffy.",
+      "Fold in flour, then add melted chocolate mixture.",
+      "Pour into ramekins and bake at 200°C (390°F) for 10 minutes.",
+      "Serve immediately with vanilla ice cream."
+    ]
   }
 ]
