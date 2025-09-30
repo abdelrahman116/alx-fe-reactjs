@@ -16,7 +16,7 @@ export default function RecipeDetail() {
         <img
           src={recipe.image}
           alt={recipe.title}
-          className="w-fit h-64 object-cover rounded-lg mb-4 "
+          className="w-fit h-64 object-cover rounded-lg mb-4 shadow "
         />
         <p className="mb-4">{recipe.summary}</p>
 
