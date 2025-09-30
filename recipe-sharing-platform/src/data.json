@@ -1,0 +1,64 @@
+[
+  {
+    "id": 1,
+    "title": "Spaghetti Carbonara",
+    "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
+    "image": "https://www.allrecipes.com/thmb/Vg2cRidr2zcYhWGvPD8M18xM_WY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/11973-spaghetti-carbonara-ii-DDMFS-4x3-6edea51e421e4457ac0c3269f3be5157.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Chicken Tikka Masala",
+    "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
+    "image": "https://dantoombs.com/wp-content/uploads/2025/06/Chicken-tikka-masala-720x720.jpg"
+  },
+  {
+    "id": 3,
+    "title": "Beef Stroganoff",
+    "summary": "Tender beef strips cooked in a creamy mushroom sauce, served over egg noodles.",
+    "image": "https://natashaskitchen.com/wp-content/uploads/2019/04/Beef-Stroganoff-6.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Margherita Pizza",
+    "summary": "A simple Neapolitan pizza topped with fresh tomatoes, mozzarella cheese, and basil.",
+    "image": "https://safrescobaldistatic.blob.core.windows.net/media/2022/11/PIZZA-MARGHERITA.jpg"
+  },
+  {
+    "id": 5,
+    "title": "Sushi Platter",
+    "summary": "An assortment of fresh nigiri, sashimi, and sushi rolls served with soy sauce and wasabi.",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCozi18sKScSXfps0FJASV2iGiXwAd7lYX9Q&s"
+  },
+
+  {
+    "id": 6,
+    "title": "Greek Salad",
+    "summary": "A refreshing salad with cucumbers, tomatoes, feta cheese, olives, and olive oil.",
+    "image": "https://hips.hearstapps.com/hmg-prod/images/greek-salad-index-642f292397bbf.jpg?crop=0.888888888888889xw:1xh;center,top&resize=1200:*"
+  },
+
+  {
+    "id": 7,
+    "title": "Falafel Wrap",
+    "summary": "Crispy chickpea falafels wrapped in pita with tahini sauce, lettuce, and tomato.",
+    "image": "https://beingnutritious.com/wp-content/uploads/2022/07/Baked-Falafel-Wrap-Square.jpg"
+  },
+  {
+    "id": 8,
+    "title": "Ramen Bowl",
+    "summary": "Japanese noodle soup with miso broth, pork slices, egg, and vegetables.",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7vD7aviWo5usFkwunWmYGOHs56s2PShCeNg&s"
+  },
+  {
+    "id": 9,
+    "title": "Tacos al Pastor",
+    "summary": "Mexican street tacos with marinated pork, pineapple, and cilantro on corn tortillas.",
+    "image": "https://www.seriouseats.com/thmb/4kbwN13BlZnZ3EywrtG2AzCKuYs=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/20210712-tacos-al-pastor-melissa-hom-seriouseats-37-f72cdd02c9574bceb1eef1c8a23b76ed.jpg"
+  },
+  {
+    "id": 10,
+    "title": "Chocolate Lava Cake",
+    "summary": "A rich chocolate cake with a warm, gooey molten center, served with ice cream.",
+    "image": "https://images.getrecipekit.com/20250325120225-how-20to-20make-20chocolate-20molten-20lava-20cake-20in-20the-20microwave.png?width=650&quality=90&"
+  }
+]
