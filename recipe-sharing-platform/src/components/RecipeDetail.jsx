@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import data from "../data.json";
-
+import { useEffect } from "react";
 export default function RecipeDetail() {
   const { id } = useParams();
   const recipe = data.find((item) => item.id === parseInt(id));
