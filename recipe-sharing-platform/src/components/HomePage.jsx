@@ -25,12 +25,12 @@ export default function HomePage() {
       </h1>
 
       <div>
-        <ul className="grid md:grid-cols-3 gap-4 sm:grid-cols-2 size-min:grid-cols-1  place-items-center">
+        <ul className="grid md:grid-cols-3 wrap-normal md:gap-15 sm:grid-cols-2 size-min:grid-cols-1  place-items-center">
           {data.map((item) => (
             <div className="mt-5">
               <li key={item.id}>
                 <Link to={`/recipes/${item.id}`} className="block">
-                  <div className="max-w-80 max-h-auto flex flex-col items-center text-center gap-1.5 rounded-2xl shadow-2xl bg-green-200 hover:scale-110 duration-200 ease-in ">
+                  <div className="md:max-w-120 md:max-h-auto sm:max-w-80 flex flex-col items-center text-center gap-1.5 rounded-2xl shadow-2xl bg-green-200 hover:scale-110 duration-200 ease-in ">
                     <h2 className="font-bold text-green-950">{item.title}</h2>
 
                     <p className="text-sm text-green-950 opacity-70">
@@ -40,7 +40,7 @@ export default function HomePage() {
                     <img
                       src={item.image}
                       alt=""
-                      className="max-w-70 h-50 rounded-2xl"
+                      className="md:max-w-100 md:h-70 sm:max-w-70 sm:h-50   rounded-2xl "
                     />
                     {/* 🔗 Link to details */}
                   </div>

@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import data from "../data.json";
-import { useEffect } from "react";
+// import { useEffect, useState } from "react";
 export default function RecipeDetail() {
   const { id } = useParams();
   const recipe = data.find((item) => item.id === parseInt(id));
@@ -16,7 +16,7 @@ export default function RecipeDetail() {
         <img
           src={recipe.image}
           alt={recipe.title}
-          className="w-fit h-64 object-cover rounded-lg mb-4 shadow "
+          className="  hover:scale-110 duration-300 ease-in-out w-fit h-64 object-cover rounded-lg mb-4 shadow "
         />
         <p className="mb-4">{recipe.summary}</p>
 
