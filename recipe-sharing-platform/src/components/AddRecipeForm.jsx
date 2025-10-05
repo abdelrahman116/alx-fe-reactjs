@@ -64,7 +64,7 @@ export default function AddRecipeForm() {
 
   return (
     <div className="p-6">
-      <h1 className="text-2xl font-bold mb-4">إضافة وصفة</h1>
+      <h1 className="text-2xl font-bold mb-4 md:text-center">إضافة وصفة</h1>
 
       <form
         onSubmit={handleSubmit}
@@ -125,7 +125,7 @@ export default function AddRecipeForm() {
 
         <button
           type="submit"
-          className="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600"
+          className="bg-green-500   text-white py-2 px-4 rounded hover:bg-green-600"
         >
           إضافة الوصفة
         </button>
@@ -133,7 +133,9 @@ export default function AddRecipeForm() {
 
       {/* ✅ عرض الوصفات */}
       <div className="mt-8">
-        <h2 className="text-xl font-bold mb-2">الوصفات (مؤقتة)</h2>
+        <h2 className="text-xl font-bold mb-2 md:text-center">
+          الوصفات (مؤقتة)
+        </h2>
         {recipes.map((r) => (
           <div
             key={r.id}
