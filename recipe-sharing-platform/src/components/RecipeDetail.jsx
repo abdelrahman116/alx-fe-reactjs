@@ -64,7 +64,7 @@ export default function RecipeDetail() {
   return (
     <div className=" bg-green-100 p-6   mx-auto">
       <div className="md:ml-100">
-        <h1 className="text-3xl font-bold mb-4">{recipe.title}</h1>
+        <h1 className="md:text-3xl text-xl font-bold mb-4">{recipe.title}</h1>
         <img
           src={recipe.image}
           alt={recipe.title}

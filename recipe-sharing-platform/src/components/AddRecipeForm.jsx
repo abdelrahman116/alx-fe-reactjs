@@ -1,111 +1,3 @@
-// import React, { useState, useEffect } from "react";
-
-// export default function AddRecipeForm() {
-//   const [title, setTitle] = useState("");
-//   const [ingredients, setIngredients] = useState("");
-//   const [steps, setSteps] = useState("");
-//   const [preview, setPreview] = useState(null);
-//   const [file, setFile] = useState(null);
-
-//   useEffect(() => {
-//     if (!file) return;
-//     const url = URL.createObjectURL(file);
-//     setPreview(url);
-//     return () => URL.revokeObjectURL(url);
-//   }, [file]);
-//   const handleSubmit = async (event) => {
-//     event.preventDefault();
-
-//     const newRecipe = {
-//       title,
-//       summary: "User added recipe",
-//       image: "https://via.placeholder.com/300",
-//       ingredients: ingredients.split("\n"),
-//       instructions: steps.split("\n"),
-//       url: null,
-//     };
-
-//     try {
-//       const response = await fetch("http://localhost:5000", {
-//         method: "POST",
-//         headers: {
-//           "Content-Type": "application/json",
-//         },
-//         body: JSON.stringify(newRecipe),
-//       });
-
-//       if (!response.ok) {
-//         throw new Error("Failed to add recipe");
-//       }
-
-//       alert("✅ Recipe added successfully!");
-//       setTitle("");
-//       setFile(null);
-
-//       setPreview(null);
-//       setIngredients("");
-//       setSteps("");
-//     } catch (error) {
-//       console.error("Error:", error);
-//       alert("❌ Something went wrong while adding the recipe.");
-//     }
-//   };
-
-//   return (
-//     <div className="p-6">
-//       <h1 className="text-2xl font-bold mb-4">Add a Recipe</h1>
-
-//       <form onSubmit={handleSubmit} className="flex flex-col gap-4 max-w-md">
-//         <input
-//           type="text"
-//           placeholder="Enter recipe title"
-//           value={title}
-//           onChange={(e) => setTitle(e.target.value)}
-//           className="border rounded p-2"
-//           required
-//         />
-
-//         <textarea
-//           rows="5"
-//           placeholder="Enter ingredients (one per line)"
-//           value={ingredients}
-//           onChange={(e) => setIngredients(e.target.value)}
-//           className="border rounded p-2"
-//           required
-//         />
-
-//         <textarea
-//           rows="5"
-//           placeholder="Enter cooking steps (one per line)"
-//           value={steps}
-//           onChange={(e) => setSteps(e.target.value)}
-//           className="border rounded p-2"
-//           required
-//         />
-//         <input
-//           type="file"
-//           accept="image/*"
-//           onChange={(e) => setFile(e.target.files[0])}
-//           className="border p-2 rounded"
-//         />
-//         {preview && (
-//           <img
-//             src={preview}
-//             alt="preview"
-//             className="w-full h-40 object-cover rounded-lg"
-//           />
-//         )}
-//         <button
-//           type="submit"
-//           className="bg-green-500 hover:cursor-pointer text-white py-2 px-4 rounded hover:bg-green-600"
-//         >
-//           Add Recipe
-//         </button>
-//       </form>
-//     </div>
-//   );
-// }
-
 import React, { useState, useEffect } from "react";
 
 export default function AddRecipeForm() {
@@ -114,9 +6,12 @@ export default function AddRecipeForm() {
   const [steps, setSteps] = useState("");
   const [preview, setPreview] = useState(null);
   const [file, setFile] = useState(null);
-  const [recipes, setRecipes] = useState([]); // store recipes in memory
+  const [recipes, setRecipes] = useState([]);
 
-  // Create preview from selected file
+  // ✅ حالة الأخطاء
+  const [errors, setErrors] = useState({});
+
+  // preview للصور
   useEffect(() => {
     if (!file) return;
     const url = URL.createObjectURL(file);
@@ -124,8 +19,27 @@ export default function AddRecipeForm() {
     return () => URL.revokeObjectURL(url);
   }, [file]);
 
+  // ✅ دالة التحقق
+  const validate = () => {
+    const newErrors = {};
+
+    if (!title.trim()) newErrors.title = "العنوان مطلوب";
+    if (!ingredients.trim()) newErrors.ingredients = "المقادير مطلوبة";
+    if (!steps.trim()) newErrors.steps = "خطوات الطبخ مطلوبة";
+    if (!file) newErrors.file = "الصورة مطلوبة";
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
+
+    // ✅ تحقق قبل الحفظ
+    if (!validate()) {
+      alert("❌ يرجى ملء جميع الحقول المطلوبة");
+      return;
+    }
 
     const newRecipe = {
       id: Date.now(),
@@ -137,20 +51,20 @@ export default function AddRecipeForm() {
     };
 
     setRecipes((prev) => [...prev, newRecipe]);
+    alert("✅ تم إضافة الوصفة بنجاح (لن تحفظ بعد التحديث)");
 
-    alert("✅ Recipe added successfully (not saved permanently)!");
-
-    // reset form
+    // reset
     setTitle("");
     setIngredients("");
     setSteps("");
     setFile(null);
     setPreview(null);
+    setErrors({});
   };
 
   return (
     <div className="p-6">
-      <h1 className="text-2xl font-bold mb-4">Add a Recipe</h1>
+      <h1 className="text-2xl font-bold mb-4">إضافة وصفة</h1>
 
       <form
         onSubmit={handleSubmit}
@@ -158,37 +72,48 @@ export default function AddRecipeForm() {
       >
         <input
           type="text"
-          placeholder="Enter recipe title"
+          placeholder="عنوان الوصفة"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
-          className="border rounded p-2"
-          required
+          className={`border rounded p-2 ${
+            errors.title ? "border-red-500" : ""
+          }`}
         />
+        {errors.title && <p className="text-red-500 text-sm">{errors.title}</p>}
 
         <textarea
           rows="5"
-          placeholder="Enter ingredients (one per line)"
+          placeholder="المقادير (كل سطر مقدار)"
           value={ingredients}
           onChange={(e) => setIngredients(e.target.value)}
-          className="border rounded p-2"
-          required
+          className={`border rounded p-2 ${
+            errors.ingredients ? "border-red-500" : ""
+          }`}
         />
+        {errors.ingredients && (
+          <p className="text-red-500 text-sm">{errors.ingredients}</p>
+        )}
 
         <textarea
           rows="5"
-          placeholder="Enter cooking steps (one per line)"
+          placeholder="خطوات الطبخ (كل سطر خطوة)"
           value={steps}
           onChange={(e) => setSteps(e.target.value)}
-          className="border rounded p-2"
-          required
+          className={`border rounded p-2 ${
+            errors.steps ? "border-red-500" : ""
+          }`}
         />
+        {errors.steps && <p className="text-red-500 text-sm">{errors.steps}</p>}
 
         <input
           type="file"
           accept="image/*"
           onChange={(e) => setFile(e.target.files[0])}
-          className="border p-2 rounded"
+          className={`border p-2 rounded ${
+            errors.file ? "border-red-500" : ""
+          }`}
         />
+        {errors.file && <p className="text-red-500 text-sm">{errors.file}</p>}
 
         {preview && (
           <img
@@ -200,15 +125,15 @@ export default function AddRecipeForm() {
 
         <button
           type="submit"
-          className="bg-green-500 hover:cursor-pointer text-white py-2 px-4 rounded hover:bg-green-600"
+          className="bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600"
         >
-          Add Recipe
+          إضافة الوصفة
         </button>
       </form>
 
-      {/* Show added recipes */}
+      {/* ✅ عرض الوصفات */}
       <div className="mt-8">
-        <h2 className="text-xl font-bold mb-2">Recipes (temporary)</h2>
+        <h2 className="text-xl font-bold mb-2">الوصفات (مؤقتة)</h2>
         {recipes.map((r) => (
           <div
             key={r.id}
