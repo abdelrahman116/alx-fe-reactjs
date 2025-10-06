@@ -51,7 +51,7 @@
 // }
 
 import { useParams } from "react-router-dom";
-import myData from "E:/New Front End Path/ALX/ProDev/Repsitory/alx-fe-reactjs/recipe-sharing-platform/data.json";
+import myData from "E:/New Front End Path/ALX/ProDev/Repsitory/alx-fe-reactjs/recipe-sharing-platform/src/data.json";
 // import { useEffect, useState } from "react";
 export default function RecipeDetail() {
   const { id } = useParams();
