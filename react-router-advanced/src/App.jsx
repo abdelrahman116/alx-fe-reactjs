@@ -1,16 +1,36 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./App.css";
+import {
+  BrowserRouter as Router,
+  Route,
+  Switch,
+  Link,
+  useRouteMatch,
+} from "react-router-dom";
+import ProfileDetails from "./ProfileDetails";
 import Profile from "./components/Profile";
-import { BrowserRouter as Router, Route, Switch, Link, useRouteMatch } from 'react-router-dom';
-
 function App() {
-  const [count, setCount] = useState(0);
+  let { path, url } = useRouteMatch();
 
   return (
     <>
-      <Profile />
+      <div>
+        <h2>Dashboard</h2>
+        <ul>
+          <li>
+            <Link to={`${url}/profileDetails`}>Profile-Details</Link>
+          </li>
+        </ul>
+        <Switch>
+          <Route exact path={path}>
+            <h3>Please select an option.</h3>
+          </Route>
+          <Route path={`${path}/profileDetails`}>
+            <ProfileDetails />
+          </Route>
+          <Route path={`${path}/profile`}>
+            <Profile />
+          </Route>
+        </Switch>
+      </div>
     </>
   );
 }
