@@ -1,37 +1,28 @@
-import {
-  BrowserRouter as Router,
-  Route,
-  Switch,
-  Link,
-  useRouteMatch,
-} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import ProfileDetails from "./ProfileDetails";
 import Profile from "./components/Profile";
-function App() {
-  let { path, url } = useRouteMatch();
 
+function App() {
   return (
-    <>
+    <Router>
       <div>
         <h2>Dashboard</h2>
         <ul>
           <li>
-            <Link to={`${url}/profileDetails`}>Profile-Details</Link>
+            <Link to="/profileDetails">Profile-Details</Link>
+          </li>
+          <li>
+            <Link to="/profile">Profile</Link>
           </li>
         </ul>
-        <Switch>
-          <Route exact path={path}>
-            <h3>Please select an option.</h3>
-          </Route>
-          <Route path={`${path}/profileDetails`}>
-            <ProfileDetails />
-          </Route>
-          <Route path={`${path}/profile`}>
-            <Profile />
-          </Route>
-        </Switch>
+
+        <Routes>
+          <Route path="/" element={<h3>Please select an option.</h3>} />
+          <Route path="/profileDetails" element={<ProfileDetails />} />
+          <Route path="/profile" element={<Profile />} />
+        </Routes>
       </div>
-    </>
+    </Router>
   );
 }
 
