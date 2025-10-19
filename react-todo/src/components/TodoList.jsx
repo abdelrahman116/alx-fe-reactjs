@@ -3,7 +3,51 @@ import Task from "./Task";
 import AddTodoForm from "./AddTodoForm";
 
 export default function TodoList() {
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState([
+    {
+      id: 1,
+      name: "Fix the sensor wiring",
+      description:
+        "Reconnect loose wires and test the circuit with multimeter.",
+      time: "10:30 AM",
+      state: "pending",
+    },
+    {
+      id: 2,
+      name: "Build login page UI",
+      description: "Use Tailwind components to design the login form.",
+      time: "12:00 PM",
+      state: "in progress",
+    },
+    {
+      id: 3,
+      name: "Write test cases for TodoList",
+      description: "Add unit tests using Jest and React Testing Library.",
+      time: "2:15 PM",
+      state: "pending",
+    },
+    {
+      id: 4,
+      name: "Review React Hooks notes",
+      description: "Revise useState, useEffect, and useContext concepts.",
+      time: "5:00 PM",
+      state: "done",
+    },
+    {
+      id: 5,
+      name: "Submit project report",
+      description: "Upload the final documentation to GitHub and Netlify.",
+      time: "7:45 PM",
+      state: "pending",
+    },
+  ]);
+  const handleToggle = (id) => {
+    setTasks(
+      tasks.map((task) =>
+        task.id === id ? { ...task, state: !task.state } : task
+      )
+    );
+  };
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleAddTask = (task) => {
@@ -40,6 +84,7 @@ export default function TodoList() {
             {...task}
             onEdit={() => handleEdit(task.id)}
             onDelete={() => handleDelete(task.id)}
+            onToggle={handleToggle}
           />
         ))
       )}
