@@ -8,15 +8,9 @@ import {
   Route,
   Link,
   useParams,
-  Navigate,
 } from "react-router-dom";
 
 export default function App() {
-  const PrivateRoute = ({ children }) => {
-    const isAuthenticated = localStorage.getItem("authToken") !== null;
-    return isAuthenticated ? children : <Navigate to="/" replace />;
-  };
-
   // Component to handle dynamic blog posts
   const BlogPost = () => {
     const { id } = useParams();
