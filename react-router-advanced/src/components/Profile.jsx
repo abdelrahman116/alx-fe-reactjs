@@ -1,15 +1,38 @@
 import ProfileSettings from "./ProfileSettings";
+import ProfileDetails from "./ProfileDetails";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link,
+  useParams,
+} from "react-router-dom";
 
 export default function Profile() {
+  // Component to handle dynamic blog posts
+  const BlogPost = () => {
+    const { postId } = useParams();
+    return <h3>Blog ID: #{postId}</h3>;
+  };
+
   return (
-    <>
-      <Routes>
-        <Route path="/" element={<h3>Please select an option.</h3>} />
-        <Route path="/profileDetails" element={<ProfileDetails />} />
-        <Route path="/profileSettings" element={<ProfileSettings />} />
-      </Routes>
-      <h1>Hi My name is: David</h1>
-      <h3>22 Years Old</h3>
-    </>
+    <Router>
+      <div>
+        {/* Navigation Bar */}
+        <nav style={{ display: "flex", gap: "10px", marginBottom: "20px" }}>
+          <Link to="/">Home</Link>
+          <Link to="/profileDetails">Profile Details</Link>
+          <Link to="/profileSettings">Profile Settings</Link>
+        </nav>
+
+        {/* Routes */}
+        <Routes>
+          <Route path="/" element={<h3>Please select an option.</h3>} />
+          <Route path="/profileDetails" element={<ProfileDetails />} />
+          <Route path="/profileSettings" element={<ProfileSettings />} />
+          <Route path="/post/:postId" element={<BlogPost />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
