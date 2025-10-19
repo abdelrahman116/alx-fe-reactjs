@@ -8,28 +8,15 @@ import {
   Route,
   Link,
   useParams,
-  Redirect,
+  Navigate,
 } from "react-router-dom";
 
 export default function App() {
-  const isAuthenticated = () => {
-    // Replace with your authentication logic, for instance checking if a token exists in local storage
-    return localStorage.getItem("authToken") !== null;
+  const PrivateRoute = ({ children }) => {
+    const isAuthenticated = localStorage.getItem("authToken") !== null;
+    return isAuthenticated ? children : <Navigate to="/" replace />;
   };
-  const PrivateRoute = ({ component: Component, ...rest }) => (
-    <Route
-      {...rest}
-      render={(props) =>
-        isAuthenticated() ? (
-          // If authenticated, render the component
-          <Component {...props} />
-        ) : (
-          // If not authenticated, redirect to the login page
-          <Redirect to="/" />
-        )
-      }
-    />
-  );
+
   // Component to handle dynamic blog posts
   const BlogPost = () => {
     const { id } = useParams();
@@ -53,8 +40,14 @@ export default function App() {
         <Routes>
           <Route path="/" element={<h3>Please select an option.</h3>} />
           <Route path="/profileDetails" element={<ProfileDetails />} />
-          <PrivateRoute path="/protectedRoute" component={ProtectedRoute} />
-
+          <Route
+            path="/protectedRoute"
+            element={
+              <PrivateRoute>
+                <ProtectedRoute />
+              </PrivateRoute>
+            }
+          />
           <Route path="/profileSettings" element={<ProfileSettings />} />
           <Route path="/blog/:id" element={<BlogPost />} />
         </Routes>
