@@ -37,9 +37,9 @@ export default function App() {
           <Route
             path="/protectedRoute"
             element={
-              <PrivateRoute>
-                <ProtectedRoute />
-              </PrivateRoute>
+              <ProtectedRoute>
+                <h3>Protected Route Content</h3>
+              </ProtectedRoute>
             }
           />
           <Route path="/profileSettings" element={<ProfileSettings />} />
