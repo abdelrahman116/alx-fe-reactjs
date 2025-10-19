@@ -36,38 +36,22 @@ export default function TodoList() {
     },
   ]);
 
-  // ✅ Add a new task
-  const addTask = (newTask) => {
+  const addTask = (newTask) =>
     setTasks([...tasks, { ...newTask, id: Date.now(), status: "pending" }]);
-  };
-
-  // ✅ Toggle task status between "done" and "pending"
-  const toggleStatus = (id) => {
+  const toggleStatus = (id) =>
     setTasks(
       tasks.map((task) =>
         task.id === id
-          ? {
-              ...task,
-              status: task.status === "done" ? "pending" : "done",
-            }
+          ? { ...task, status: task.status === "done" ? "pending" : "done" }
           : task
       )
     );
-  };
-
-  // ✅ Delete a task
-  const deleteTask = (id) => {
-    setTasks(tasks.filter((task) => task.id !== id));
-  };
+  const deleteTask = (id) => setTasks(tasks.filter((task) => task.id !== id));
 
   return (
     <div className="max-w-md mx-auto mt-10 p-4 bg-white shadow-md rounded-2xl">
       <h1 className="text-2xl font-bold text-center mb-4">To-Do List</h1>
-
-      {/* Add Task Form */}
       <AddTodoForm onAdd={addTask} />
-
-      {/* Task List */}
       <div className="flex flex-col gap-3 mt-4">
         {tasks.map((task) => (
           <div
@@ -80,7 +64,6 @@ export default function TodoList() {
               <h3 className="font-semibold">{task.name}</h3>
               <p className="text-gray-600 text-sm">{task.description}</p>
             </div>
-
             <div className="flex gap-2">
               <button
                 onClick={() => toggleStatus(task.id)}
@@ -88,7 +71,6 @@ export default function TodoList() {
               >
                 {task.status === "done" ? "Undo" : "Done"}
               </button>
-
               <button
                 onClick={() => deleteTask(task.id)}
                 className="px-3 py-1 text-sm rounded-md bg-red-500 text-white hover:bg-red-600"
@@ -99,6 +81,27 @@ export default function TodoList() {
           </div>
         ))}
       </div>
+    </div>
+  );
+}
+
+export function Task({ name, description, state, onToggle }) {
+  return (
+    <div
+      className={`flex justify-between items-center p-3 rounded-lg shadow-sm border ${
+        state ? "bg-green-100" : "bg-white"
+      }`}
+    >
+      <div>
+        <h3 className="font-semibold">{name}</h3>
+        <p className="text-gray-600 text-sm">{description}</p>
+      </div>
+      <button
+        onClick={onToggle}
+        className="px-3 py-1 text-sm rounded-md bg-blue-500 text-white hover:bg-blue-600"
+      >
+        {state ? "Done ✅" : "Pending ⏳"}
+      </button>
     </div>
   );
 }
