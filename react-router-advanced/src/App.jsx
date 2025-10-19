@@ -1,33 +1,38 @@
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import Profile from "./components/Profile";
-import DynamicRoutes from "./components/DynamicRoutes";
-import ProfileDetails from "./components/ProfileDetails";
+import ProfileSettings from "./ProfileSettings";
+import ProfileDetails from "./ProfileDetails";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link,
+  useParams,
+} from "react-router-dom";
 
-function App() {
+export default function App() {
+  // Component to handle dynamic blog posts
+  const BlogPost = () => {
+    const { id } = useParams();
+    return <h3>Blog ID: #{id}</h3>;
+  };
+
   return (
-    <div>
-      {" "}
-      <Router>
-        <div>
-          <h2>Dashboard</h2>
-          <ul>
-            <li>
-              <Link to="/profileDetails">Profile-Details</Link>
-            </li>
-            <li>
-              <Link to="/profile">Profile</Link>
-            </li>
-          </ul>
+    <Router>
+      <div>
+        {/* Navigation Bar */}
+        <nav style={{ display: "flex", gap: "10px", marginBottom: "20px" }}>
+          <Link to="/">Home</Link>
+          <Link to="/profileDetails">Profile Details</Link>
+          <Link to="/profileSettings">Profile Settings</Link>
+        </nav>
 
-          <Routes>
-            <Route path="/" element={<h3>Please select an option.</h3>} />
-            <Route path="/profileDetails" element={<ProfileDetails />} />
-            <Route path="/profile" element={<Profile />} />
-          </Routes>
-        </div>
-      </Router>
-    </div>
+        {/* Routes */}
+        <Routes>
+          <Route path="/" element={<h3>Please select an option.</h3>} />
+          <Route path="/profileDetails" element={<ProfileDetails />} />
+          <Route path="/profileSettings" element={<ProfileSettings />} />
+          <Route path="/blog/:id" element={<BlogPost />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
-
-export default App;
