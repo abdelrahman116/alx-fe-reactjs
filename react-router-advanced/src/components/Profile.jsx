@@ -11,8 +11,8 @@ import {
 export default function Profile() {
   // Component to handle dynamic blog posts
   const BlogPost = () => {
-    const { postId } = useParams();
-    return <h3>Blog ID: #{postId}</h3>;
+    const { id } = useParams();
+    return <h3>Blog ID: #{id}</h3>;
   };
 
   return (
@@ -30,7 +30,7 @@ export default function Profile() {
           <Route path="/" element={<h3>Please select an option.</h3>} />
           <Route path="/profileDetails" element={<ProfileDetails />} />
           <Route path="/profileSettings" element={<ProfileSettings />} />
-          <Route path="/post/:postId" element={<BlogPost />} />
+          <Route path="/blog/:id" element={<BlogPost />} />
         </Routes>
       </div>
     </Router>
