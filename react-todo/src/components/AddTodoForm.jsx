@@ -31,7 +31,7 @@ export default function AddTodoForm({ onAdd }) {
       />
       <button
         type="submit"
-        className="bg-green-500 text-white p-2 rounded-md hover:bg-green-600"
+        className="bg-green-500 text-white px-3 py-1 rounded-md"
       >
         Add Task
       </button>
